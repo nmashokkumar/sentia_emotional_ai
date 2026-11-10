@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTIA | Your Emotional Support Companion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page">
+        <div class="logo-container">
+            <h1 class="logo">SENTIA</h1>
+            <p class="tagline">Your AI-powered emotional support companion. Always here to listen.</p>
+        </div>
+
+        <div class="intro-card">
+            <h2>Welcome to SENTIA</h2>
+            <p>SENTIA is an AI-based emotional support chatbot designed to provide you with a calm, safe, and supportive conversational experience.</p>
+            <p>Unlike typical chatbots, SENTIA focuses on emotional understanding, mental well-being, and human-like empathy. Your privacy is protected as all data stays on your device.</p>
+
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                    <div class="feature-text">Emotionally Intelligent</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="feature-text">Privacy-First</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                    <div class="feature-text">Always Available</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <div class="feature-text">Adaptive Responses</div>
+                </div>
+            </div>
+
+            <p>Take a moment to express your thoughts and feelings. SENTIA is here to listen without judgment.</p>
+        </div>
+
+        <button type="button" class="start-button" id="startButton">
+            <i class="fas fa-comment-dots"></i>
+            Start Talking with SENTIA
+        </button>
+    </div>
+
+    <!-- Chat Interface (hidden by default via JS) -->
+    <div id="chatInterface" class="chat-interface" style="display:none;">
+        <div class="chat-header">
+            <div class="header-left">
+                <div class="avatar">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="header-text">
+                    <h1>SENTIA</h1>
+                    <p>Your emotional support companion</p>
+                </div>
+            </div>
+            <button type="button" class="back-button" id="backButton">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+        </div>
+
+        <div class="chat-main">
+            <!-- Emotion Sidebar -->
+            <div class="emotion-sidebar">
+                <div class="emotion-card current-emotion">
+                    <h3><i class="fas fa-smile"></i> Current Emotion</h3>
+                    <div class="emotion-icon" id="currentEmotionIcon">
+                        <i class="fas fa-smile-beam"></i>
+                    </div>
+                    <div class="emotion-name" id="currentEmotionName">Neutral</div>
+                    <div class="emotion-description" id="currentEmotionDescription">I'm here to listen to you</div>
+                    <div class="emotion-probability">
+                        <div class="probability-bar">
+                            <div class="probability-fill" id="emotionProbabilityBar"></div>
+                        </div>
+                        <div class="probability-text" id="emotionProbabilityText">70% confidence</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages"></div>
+
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-container">
+                    <input type="text" class="message-input" id="messageInput"
+                        placeholder="Share your thoughts or feelings..." autocomplete="off">
+                    <div class="input-buttons">
+                        <button type="button" class="input-button" id="voiceButton" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button type="button" class="input-button cancel-voice" id="cancelVoiceButton"
+                            title="Cancel Voice" style="display:none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <button type="button" class="input-button send" id="sendButton" title="Send Message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
